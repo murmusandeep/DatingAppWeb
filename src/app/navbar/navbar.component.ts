@@ -27,12 +27,6 @@ export class NavbarComponent implements OnInit {
   login() {
     this.accountService.login(this.model).subscribe({
       next: (response) => this.router.navigateByUrl('/members'),
-      error: (error) =>
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Error',
-          detail: error.error,
-        }),
     });
   }
 
